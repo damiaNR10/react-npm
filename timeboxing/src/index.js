@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {v4 as uuid} from 'uuid';
 import { v4 as uuidv4 } from 'uuid';
 
-
-    function Clock({className ="", hours = 1, minutes = 2, seconds = 3, miliseconds = 4}) {
-        return <h2 className={"Clock " + className}>Pozostało {minutes > 9 ? minutes : "0" + minutes}:{seconds > 9 ? seconds : "0" + seconds}</h2>;
-        // return <h2 className={"Clock " + className}>Pozostało {hours > 9 ? hours : "0" + hours}:{minutes > 9 ? minutes : "0" + minutes}:{seconds > 9 ? seconds : "0" + seconds}:{miliseconds > 9 ? miliseconds : "0" + miliseconds}</h2>;
-    }
+import Clock from "./components/Clock.js";
 
     function ProgressBar({className ="", percent = "10", trackRemaining = "false"}) {
         return (            
