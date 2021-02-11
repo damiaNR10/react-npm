@@ -1,0 +1,69 @@
+.App {
+    font-family: sans-serif;
+}
+
+.CurrentTimebox {
+    border: $default-border;
+    border-radius: $border-radius;
+    padding: 20px;
+    text-align: center;
+}
+
+.Timebox {
+    border-radius: $border-radius;
+    border: $default-border;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.TimeboxEditor, .TimeboxCreator {
+    text-align: right;
+    border-radius: $border-radius;
+    border: $default-border;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.TimeboxCreator {
+    background: lighten(aqua, 20);
+}
+
+.TimeboxEditor {
+    background: darken(aquamarine, 50);
+}
+
+.Timebox {
+    background: #ffaaaaaa;
+}
+
+.CurrentTimebox {
+    background: #ffffaa;
+}
+
+.input {
+    min-width: 60%;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.button {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.Clock {
+    color: orangered;
+}
+
+.ProgressBar {
+    border-radius: $border-radius;
+    border: 1px solid orangered;
+    margin-bottom: 20px;
+    height: 25px;
+    padding: 5px;
+
+    > div {
+        height: 100%;
+        background-color: orangered;
+    }
+}
