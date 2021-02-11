@@ -5,8 +5,8 @@ import Clock from "./Clock";
 
 function ProgressBar({className ="", percent = "10", trackRemaining = "false"}) {
     return (            
-        <div className={"ProgressBar " + className}>
-            <div style={{width: `${percent}%`, height: "20px", "marginLeft": trackRemaining == "true" ? "auto" : "initial"}}></div>
+        <div className={"progress progress--big progress--color-red" + className}>
+            <div className = "progress__bar" style={{width: `${percent}%`, height: "20px", "marginLeft": trackRemaining == "true" ? "auto" : "initial"}}></div>
         </div>
     );
 }
