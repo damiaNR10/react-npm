@@ -3,10 +3,20 @@ import { v4 as uuidv4 } from 'uuid';
 
 import Clock from "./Clock";
 
-function ProgressBar({className ="", percent = "10", trackRemaining = "false"}) {
+function ProgressBar({className ="", percent = "10", trackRemaining = false, big = false, color = null}) {
+    let progressClassName = "progress" + className;
+
+    if(big) {
+        progressClassName += " progress--big"
+    }
+
+    if(color === "red") {
+        progressClassName += " progress--color-red";
+    }
+
     return (            
-        <div className={"progress progress--big progress--color-red" + className}>
-            <div className = "progress__bar" style={{width: `${percent}%`, height: "20px", "marginLeft": trackRemaining == "true" ? "auto" : "initial"}}></div>
+        <div className={progressClassName}>
+            <div className = "progress__bar" style={{width: `${percent}%`, height: "100%", "marginLeft": trackRemaining == "true" ? "auto" : "initial"}}></div>
         </div>
     );
 }
@@ -94,7 +104,12 @@ class CurrentTimebox extends React.Component {
             <div className={`CurrentTimebox ${isEditable ? "inactive" : ""}`}>
                 <h1>{title}</h1>
                 <Clock minutes = {minutesLeft} seconds = {secondsLeft} className = {isPaused ? "inactive" : ""} />
-                <ProgressBar percent = {progressInPercent} trackRemaining = "false"  className = {isPaused ? "inactive" : ""} />
+                <ProgressBar 
+                percent = {progressInPercent} 
+                trackRemaining = "false"  
+                className = {isPaused ? "inactive" : ""} 
+                color = "red"
+                big />
                 <button onClick = {onEdit} disabled = {isEditable}>Edytuj</button>
                 <button onClick = {this.handleStart} disabled = {isRunning}>Start</button>
                 <button onClick = {this.handleStop} disabled = {!isRunning}>Stop</button>
