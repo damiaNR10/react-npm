@@ -1,18 +1,18 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import classNames from 'classnames';
 
 import Clock from "./Clock";
 
 function ProgressBar({className ="", percent = "10", trackRemaining = false, big = false, color = null}) {
-    let progressClassName = "progress" + className;
-
-    if(big) {
-        progressClassName += " progress--big"
-    }
-
-    if(color === "red") {
-        progressClassName += " progress--color-red";
-    }
+    let progressClassName = classNames(
+        "progress",
+        "awd",
+        {
+            "progress--big": big,
+            "progress--color-red": color === "red",
+        }
+        );
 
     return (            
         <div className={progressClassName}>
