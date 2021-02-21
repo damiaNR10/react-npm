@@ -3,23 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 
 import Clock from "./Clock";
-
-function ProgressBar({className ="", percent = "10", trackRemaining = false, big = false, color = null}) {
-    let progressClassName = classNames(
-        "progress",
-        "awd",
-        {
-            "progress--big": big,
-            "progress--color-red": color === "red",
-        }
-        );
-
-    return (            
-        <div className={progressClassName}>
-            <div className = "progress__bar" style={{width: `${percent}%`, height: "100%", "marginLeft": trackRemaining == "true" ? "auto" : "initial"}}></div>
-        </div>
-    );
-}
+import ProgressBar from "./ProgressBar";
 
 function TimeboxEditor(props) {
     const {title, totalTimeInMinutes, onTitleChange, onTotalTimeInMinutesChange, onConfirm, isEditable} = props;
