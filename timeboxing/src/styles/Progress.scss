@@ -1,0 +1,25 @@
+
+.progress {
+    border-radius: $border-radius;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    height: 25px;
+    padding: 5px;
+
+    &--big {
+        height: 50px;
+    }
+    
+    &--color-red {
+        border: 1px solid orangered;
+    }
+    
+    &__bar {
+        height: 100%;
+        background-color: black;
+    }
+    
+    &--color-red &__bar {
+        background-color: orangered;
+    }
+}
