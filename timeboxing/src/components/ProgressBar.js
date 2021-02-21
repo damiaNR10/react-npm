@@ -4,7 +4,6 @@ import classNames from 'classnames';
 function ProgressBar({className ="", percent = "10", trackRemaining = false, big = false, color = null}) {
     let progressClassName = classNames(
         "progress",
-        "awd",
         {
             "progress--big": big,
             "progress--color-red": color === "red",
