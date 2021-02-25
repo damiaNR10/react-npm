@@ -41,6 +41,7 @@ class TimeboxList extends React.Component {
     }
 
     render() {
+        console.table(this.state.timeboxes);
         return(
             <>
             <TimeboxCreator onCreate = {this.handleCreate}/>

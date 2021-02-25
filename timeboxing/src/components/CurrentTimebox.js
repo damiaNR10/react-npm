@@ -17,12 +17,16 @@ class CurrentTimebox extends React.Component {
         this.togglePause = this.togglePause.bind(this);
     }
     handleStart(event) {
+        event.persist();
+        console.log("handleStart");
+        console.log(event);
         this.setState({
             isRunning: true,
         });
         this.startTimer();
     }
     handleStop(event) {
+        console.log("handleStop");
         this.setState({
             isRunning: false,
             isPaused: false,
@@ -69,6 +73,22 @@ class CurrentTimebox extends React.Component {
         const minutesLeft = Math.floor(timeLeftInSeconds/60);
         const secondsLeft = Math.floor(timeLeftInSeconds%60);
         const progressInPercent = (elapsedTimeInSeconds / totalTimeInSeconds) * 100;
+        console.group("This is a group");
+            console.info({totalTimeInMinutes, pausesCount});
+            console.debug("Debug message");
+            console.groupCollapsed("This is a subgroup");
+                console.warn("Warning message");
+                console.error("Error message");
+                // console.trace("Displat stack trace");
+                console.assert(4 < 2, "Smth is wrong");
+            console.groupEnd();
+        console.groupEnd();
+        console.count();
+        console.count();
+        console.countReset();
+        console.dir(document.body);
+        console.log("Title is %s, total seconds: %d, PI is %f", title, totalTimeInSeconds, 3.14);
+        console.log("%c green %c yellow", "color: green", "background: red");
 
         return (
             <div className={`CurrentTimebox ${isEditable ? "inactive" : ""}`}>
