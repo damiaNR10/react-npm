@@ -32,6 +32,7 @@ class EditableTimebox extends React.Component {
         const {title, totalTimeInMinutes, isEditable} = this.state;
         return (
             <>
+            { isEditable ? (
                 <TimeboxEditor 
                     isEditable = {isEditable}
                     onConfirm = {this.handleConfirm} 
@@ -39,11 +40,13 @@ class EditableTimebox extends React.Component {
                     onTitleChange = {this.handleTitleChange}
                     onTotalTimeInMinutesChange = {this.handleTotalTimeInMinutesChange}
                 />
+                  ): ( 
                 <CurrentTimebox 
                 isEditable = {isEditable}
                 title = {title} 
                 totalTimeInMinutes = {totalTimeInMinutes}
                 onEdit = {this.handleEdit}/> 
+                 )} 
             </>
         );
     }

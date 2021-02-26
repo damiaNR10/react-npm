@@ -4,6 +4,7 @@ import ProgressBar from "./ProgressBar";
 
 class CurrentTimebox extends React.Component {
     constructor(props) {
+        console.count("constructor");
         super(props);
         this.state = {
             isRunning: false,
@@ -16,17 +17,31 @@ class CurrentTimebox extends React.Component {
         this.handleStop = this.handleStop.bind(this);
         this.togglePause = this.togglePause.bind(this);
     }
+
+    componentDidMount() {
+        console.count("componentDidMmount");
+    }
+
+    componentDidUpdate() {
+        console.count("componentDidUpdate");
+    }
+
+    componentWillUnmount() {
+        console.count("componentWillUnmount");
+        this.stopTimer();
+    }
+
     handleStart(event) {
-        event.persist();
-        console.log("handleStart");
-        console.log(event);
+        // event.persist();
+        // console.log("handleStart");
+        // console.log(event);
         this.setState({
             isRunning: true,
         });
         this.startTimer();
     }
     handleStop(event) {
-        console.log("handleStop");
+        // console.log("handleStop");
         this.setState({
             isRunning: false,
             isPaused: false,
@@ -37,6 +52,7 @@ class CurrentTimebox extends React.Component {
     } 
     startTimer() {
         this.intervalID = window.setInterval(() => {
+            console.log("Timer Works!");
             this.setState(
                 (prevState) => {
                     return {
@@ -52,6 +68,7 @@ class CurrentTimebox extends React.Component {
     togglePause(event) {
         this.setState(
             function(prevState) {
+                console.count("setState");
                 const isPaused = !prevState.isPaused;
                 if(isPaused) {
                     this.stopTimer();
@@ -66,6 +83,7 @@ class CurrentTimebox extends React.Component {
         );
     }
     render() {
+        console.count("render");
         const {isRunning, isPaused, pausesCount, elapsedTimeInSeconds} = this.state;
         const {title, totalTimeInMinutes, isEditable, onEdit} = this.props;
         const totalTimeInSeconds = totalTimeInMinutes * 60;
@@ -73,22 +91,22 @@ class CurrentTimebox extends React.Component {
         const minutesLeft = Math.floor(timeLeftInSeconds/60);
         const secondsLeft = Math.floor(timeLeftInSeconds%60);
         const progressInPercent = (elapsedTimeInSeconds / totalTimeInSeconds) * 100;
-        console.group("This is a group");
-            console.info({totalTimeInMinutes, pausesCount});
-            console.debug("Debug message");
-            console.groupCollapsed("This is a subgroup");
-                console.warn("Warning message");
-                console.error("Error message");
-                // console.trace("Displat stack trace");
-                console.assert(4 < 2, "Smth is wrong");
-            console.groupEnd();
-        console.groupEnd();
-        console.count();
-        console.count();
-        console.countReset();
-        console.dir(document.body);
-        console.log("Title is %s, total seconds: %d, PI is %f", title, totalTimeInSeconds, 3.14);
-        console.log("%c green %c yellow", "color: green", "background: red");
+        // console.group("This is a group");
+        //     console.info({totalTimeInMinutes, pausesCount});
+        //     console.debug("Debug message");
+        //     console.groupCollapsed("This is a subgroup");
+        //         console.warn("Warning message");
+        //         console.error("Error message");
+        //         // console.trace("Displat stack trace");
+        //         console.assert(4 < 2, "Smth is wrong");
+        //     console.groupEnd();
+        // console.groupEnd();
+        // console.count();
+        // console.count();
+        // console.countReset();
+        // console.dir(document.body);
+        // console.log("Title is %s, total seconds: %d, PI is %f", title, totalTimeInSeconds, 3.14);
+        // console.log("%c green %c yellow", "color: green", "background: red");
 
         return (
             <div className={`CurrentTimebox ${isEditable ? "inactive" : ""}`}>
