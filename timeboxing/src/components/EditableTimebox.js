@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import TimeboxEditor from "./TimeboxEditor"
 import CurrentTimebox from "./CurrentTimebox";
 
@@ -32,21 +32,23 @@ class EditableTimebox extends React.Component {
         const {title, totalTimeInMinutes, isEditable} = this.state;
         return (
             <>
-            { isEditable ? (
-                <TimeboxEditor 
-                    isEditable = {isEditable}
-                    onConfirm = {this.handleConfirm} 
-                    title = {title} totalTimeInMinutes = {totalTimeInMinutes}
-                    onTitleChange = {this.handleTitleChange}
-                    onTotalTimeInMinutesChange = {this.handleTotalTimeInMinutesChange}
-                />
-                  ): ( 
-                <CurrentTimebox 
-                isEditable = {isEditable}
-                title = {title} 
-                totalTimeInMinutes = {totalTimeInMinutes}
-                onEdit = {this.handleEdit}/> 
-                 )} 
+                <StrictMode>
+                    { isEditable ? (
+                        <TimeboxEditor 
+                            isEditable = {isEditable}
+                            onConfirm = {this.handleConfirm} 
+                            title = {title} totalTimeInMinutes = {totalTimeInMinutes}
+                            onTitleChange = {this.handleTitleChange}
+                            onTotalTimeInMinutesChange = {this.handleTotalTimeInMinutesChange}
+                        />
+                        ): ( 
+                        <CurrentTimebox 
+                        isEditable = {isEditable}
+                        title = {title} 
+                        totalTimeInMinutes = {totalTimeInMinutes}
+                        onEdit = {this.handleEdit}/> 
+                    )} 
+                </StrictMode>
             </>
         );
     }
