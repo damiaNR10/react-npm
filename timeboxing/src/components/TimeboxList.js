@@ -1,7 +1,7 @@
 import React from 'react';
 import Timebox from './Timebox';
 import TimeboxCreator from './TimeboxCreator';
-
+import Error from './Error';
 
 class TimeboxList extends React.Component {
 
@@ -10,8 +10,19 @@ class TimeboxList extends React.Component {
             {id: "aa", title: "Uczę się A", totalTimeInMinutes: "5"}, 
             {id: "bb", title: "Uczę się B", totalTimeInMinutes: "10"},
             {id: "cc", title: "Uczę się C", totalTimeInMinutes: "15"}
-        ]
+        ],
+        // hasError: false,
     }
+
+    // static getDerivedStateFromError(error) {
+    //     // Update state so the next render will show the fallback UI.
+    //     return { hasError: true };
+    // }
+
+    // componentDidCatch(error, errorInfo) {
+    //     // You can also log the error to an error reporting service
+    //     console.log("Wystąpił następujący błąd:", error, errorInfo);
+    // }
 
     addTimebox = (timebox) => {
         this.setState(prevState => {
@@ -37,26 +48,33 @@ class TimeboxList extends React.Component {
     }
 
     handleCreate = (createdTimebox) => {
-        this.addTimebox(createdTimebox);
+        try {
+            this.addTimebox(createdTimebox);
+        } catch(error) {
+            console.log("An error occured in 'createTimebox' function", error);
+        }
     }
 
     render() {
-        console.table(this.state.timeboxes);
         return(
             <>
             <TimeboxCreator onCreate = {this.handleCreate}/>
-            {this.state.timeboxes.map((timebox, index) => (
-                <Timebox 
-                key = {timebox.id} 
-                title = {timebox.title} 
-                totalTimeInMinutes = {timebox.totalTimeInMinutes} 
-                onDelete = {() => this.removeTimebox(index)}
-                onEdit = {() => this.updateTimebox(index, {...timebox, title: "new title"})}
-                titleInputChange = {this.titleInputChange}
-                totalTimeInMinutesInputChange = {this.totalTimeInMinutesInputChange}
-                />
+            <Error message = "Something went wrong :(">
+            {  
+                // this.state.hasError ? "Smth went wrong" : 
+                this.state.timeboxes.map((timebox, index) => (
+                    <Timebox 
+                    key = {timebox.id} 
+                    title = {timebox.title} 
+                    totalTimeInMinutes = {timebox.totalTimeInMinutes} 
+                    onDelete = {() => this.removeTimebox(index)}
+                    onEdit = {() => this.updateTimebox(index, {...timebox, title: "new title"})}
+                    titleInputChange = {this.titleInputChange}
+                    totalTimeInMinutesInputChange = {this.totalTimeInMinutesInputChange}
+                    />
             )
             )}
+            </Error>
             </>
         )
     }

@@ -8,6 +8,10 @@ class Timebox extends React.Component {
 
     render () {
 
+        if(this.props.totalTimeInMinutes <= 0) {
+            throw new Error("Total time in minutes must be bigger than 0");
+        }
+
         return(
 
             <div className="Timebox">

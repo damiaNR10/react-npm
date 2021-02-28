@@ -1,12 +1,17 @@
 import React from 'react';
 import EditableTimebox from './EditableTimebox';
 import TimeboxList from './TimeboxList';
+import Error from './Error';
 
 function App() {
     return (    
         <div className="App">
-            <TimeboxList />
-            <EditableTimebox />
+            <Error message="Something is wrong with whole app">
+                <TimeboxList />
+                <Error message="Something is wrong with whole EditableTimebox">
+                    <EditableTimebox />
+                </Error>
+            </Error>
         </div>
     );
 }
