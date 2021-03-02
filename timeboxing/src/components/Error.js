@@ -12,7 +12,7 @@ class Error extends React.Component {
 
     componentDidCatch(error, errorInfo) {
         // You can also log the error to an error reporting service
-        console.log("Wystąpił następujący błąd:", error, errorInfo);
+        console.log("An error occured:", error, errorInfo);
     }
 
     render() {
