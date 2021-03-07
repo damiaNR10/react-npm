@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 
 class CurrentTimebox extends React.Component {
     constructor(props) {
-        console.count("constructor");
+        //console.count("constructor");
         super(props);
         this.state = {
             isRunning: false,
@@ -20,15 +20,15 @@ class CurrentTimebox extends React.Component {
     }
 
     componentDidMount() {
-        console.count("componentDidMmount");
+        //console.count("componentDidMmount");
     }
 
     componentDidUpdate() {
-        console.count("componentDidUpdate");
+        //console.count("componentDidUpdate");
     }
 
     componentWillUnmount() {
-        console.count("componentWillUnmount");
+        //console.count("componentWillUnmount");
         this.stopTimer();
     }
 
@@ -54,7 +54,7 @@ class CurrentTimebox extends React.Component {
     startTimer() {
         if(this.intervalID === null) {
             this.intervalID = window.setInterval(() => {
-                console.log("Timer Works!");
+                //console.log("Timer Works!");
                 this.setState(
                     (prevState) => {
                         return {
@@ -88,7 +88,7 @@ class CurrentTimebox extends React.Component {
         );
     }
     render() {
-        console.count("render");
+        //console.count("render");
         const {isRunning, isPaused, pausesCount, elapsedTimeInSeconds} = this.state;
         const {title, totalTimeInMinutes, isEditable, onEdit} = this.props;
         const totalTimeInSeconds = totalTimeInMinutes * 60;
@@ -117,6 +117,7 @@ class CurrentTimebox extends React.Component {
             <div className={`CurrentTimebox ${isEditable ? "inactive" : ""}`}>
                 <h1>{title}</h1>
                 <Clock minutes = {minutesLeft} seconds = {secondsLeft} className = {isPaused ? "inactive" : ""} />
+                {/* <Clock hours = {99} minutes = {5} seconds = {-5} miliseconds = {13}/> */}
                 <ProgressBar 
                 percent = {progressInPercent} 
                 trackRemaining = "false"  
