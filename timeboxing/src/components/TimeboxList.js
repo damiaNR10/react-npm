@@ -1,7 +1,7 @@
 import React from 'react';
 import Timebox from './Timebox';
 import TimeboxCreator from './TimeboxCreator';
-import Error from './Error';
+import ErrorBoundary from './ErrorBoundary';
 
 class TimeboxList extends React.Component {
 
@@ -59,7 +59,7 @@ class TimeboxList extends React.Component {
         return(
             <>
             <TimeboxCreator onCreate = {this.handleCreate}/>
-            <Error message = "Something went wrong :(">
+            <ErrorBoundary message = "Something went wrong :(">
             {  
                 // this.state.hasError ? "Smth went wrong" : 
                 this.state.timeboxes.map((timebox, index) => (
@@ -74,7 +74,7 @@ class TimeboxList extends React.Component {
                     />
             )
             )}
-            </Error>
+            </ErrorBoundary>
             </>
         )
     }
