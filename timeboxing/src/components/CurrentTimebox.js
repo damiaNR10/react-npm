@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from "./Clock";
 import ProgressBar from "./ProgressBar";
+import { getMinutesAndSecondsFromDurationInSeconds } from "../lib/time.js";
 
 class CurrentTimebox extends React.Component {
     constructor(props) {
@@ -93,8 +94,7 @@ class CurrentTimebox extends React.Component {
         const {title, totalTimeInMinutes, isEditable, onEdit} = this.props;
         const totalTimeInSeconds = totalTimeInMinutes * 60;
         const timeLeftInSeconds = totalTimeInSeconds - elapsedTimeInSeconds;
-        const minutesLeft = Math.floor(timeLeftInSeconds/60);
-        const secondsLeft = Math.floor(timeLeftInSeconds%60);
+        const [minutesLeft, secondsLeft] = getMinutesAndSecondsFromDurationInSeconds(timeLeftInSeconds);
         const progressInPercent = (elapsedTimeInSeconds / totalTimeInSeconds) * 100;
         // console.group("This is a group");
         //     console.info({totalTimeInMinutes, pausesCount});
