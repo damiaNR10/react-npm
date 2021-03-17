@@ -44,9 +44,10 @@ describe("<Clock />", () => {
         });
 
         it("renders properly", () => {
-            expect(clockRenderer.toJSON().type).toEqual('h2');
-            expect(clockRenderer.toJSON().props).toMatchObject({'className': expect.stringMatching(/Clock/)});
-            expect(clockRenderer.toJSON().children).toEqual(expect.arrayContaining(["20", "40"]));
+            expect(clockRenderer.toJSON()).toMatchSnapshot();
+            // expect(clockRenderer.toJSON().type).toEqual('h2');
+            // expect(clockRenderer.toJSON().props).toMatchObject({'className': expect.stringMatching(/Clock/)});
+            // expect(clockRenderer.toJSON().children).toEqual(expect.arrayContaining(["20", "40"]));
         });
 
         it("renders h2 element properly", () => {
