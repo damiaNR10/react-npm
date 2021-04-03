@@ -1,0 +1,7 @@
+{
+    "timeboxes": [
+        {"id": "aa", "title": "Uczę się Rest API", "totalTimeInMinutes": "5"}, 
+        {"id": "bb", "title": "Uczę się B", "totalTimeInMinutes": "10"},
+        {"id": "cc", "title": "Uczę się C", "totalTimeInMinutes": "15"}
+    ]
+}
