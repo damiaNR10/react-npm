@@ -1,0 +1,299 @@
+[33mcommit 272b5b28c323ea0d6499c06d5c9daeb8ecf3ed77[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: damiaNR10 <dymon10@o2.pl>
+Date:   Thu Jul 15 17:43:52 2021 +0200
+
+    Text line removed
+
+[33mcommit a1e69d2174c3d5d73094f0a58e55363a268a8332[m
+Author: damiaNR10 <damian.rog@zdzislowicz.pl>
+Date:   Thu Jul 15 17:38:37 2021 +0200
+
+    Error solved
+
+[33mcommit cc6fb7620f0b65440afd776fc20461bec5205a5a[m
+Author: Zdzislowicz-Damian <damian.rog@zdzislowicz.pl>
+Date:   Thu Jul 15 17:33:11 2021 +0200
+
+    Fake api adapter created
+
+[33mcommit 9821d64cf7aa2f0750f9a3036438288e44b64edc[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Apr 4 00:24:43 2021 +0200
+
+    CRUD actions on database simulator with Postman
+
+[33mcommit ef49c0083ab803523497f6ca914c5df47cad0738[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sat Apr 3 23:49:22 2021 +0200
+
+    Database created (Json Server)
+
+[33mcommit 6a68754369467169535d929d0c65424add6cfd65[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Mon Mar 22 00:17:01 2021 +0100
+
+    Editing the timebox correct test
+
+[33mcommit c10ea52fe3d463a02b0fa48447e39bd682f3527b[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Mar 21 22:14:19 2021 +0100
+
+    FireEvent to UserEvent update
+
+[33mcommit 1e7fa511e2a45d98eda21b99bfef605cc5016011[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sat Mar 20 19:35:19 2021 +0100
+
+    EditableTimebox component testing with Testing Library React
+
+[33mcommit 970d790b70f0cd98fc7f3a48353536be15011434[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Mar 19 23:47:08 2021 +0100
+
+    Example of React Testing Library using
+
+[33mcommit fd102921f02b62cb4b127804fa91fa04385175e6[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Wed Mar 17 23:55:59 2021 +0100
+
+    Snapshot test
+
+[33mcommit d0aa10b5c40c91d625e20a2e30284b19ad5c2404[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Mon Mar 15 00:15:49 2021 +0100
+
+    Testing with ReactTestRenderer
+
+[33mcommit 37a3290d039fa4af483d79112476a1c5073bd3b2[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sat Mar 13 21:10:35 2021 +0100
+
+    Clock component's grouped tests
+
+[33mcommit 3ca7a0a4292a6543b8489d6b1309e8f84733accd[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sat Mar 13 19:14:38 2021 +0100
+
+    Clock component tests
+
+[33mcommit 2aa6c3f05c98eeb9e2a5e8ed6c2ec227c7738ade[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Mar 12 00:28:29 2021 +0100
+
+    Regrouped tests
+
+[33mcommit 81cf1b50b347982a03e005b1e2e1a96c3408cc02[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Mar 12 00:20:19 2021 +0100
+
+    Grouped tests
+
+[33mcommit 51a96e5431b07795e060f7fb05fa5c54defcee6b[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Mar 11 00:16:42 2021 +0100
+
+    getMinutesAndSecondsFromDurationInSeconds tests
+
+[33mcommit ebcec43602e5ecba3463a6246af7c843b5306017[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Tue Mar 9 00:32:56 2021 +0100
+
+    Testing with Jest
+
+[33mcommit f9722e434df1453700006ba8e4699c619eccefb2[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Mon Mar 8 00:23:39 2021 +0100
+
+    ErrorBoundary's name problem resolved
+
+[33mcommit 87baa4fb44cfa261e7b14c69098a22b35f51d199[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Mon Mar 8 00:20:39 2021 +0100
+
+    Usage of PropTypes library
+
+[33mcommit 70273f1f35355682f241e4ffbfd516fd523a5ab7[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Mar 5 00:26:45 2021 +0100
+
+    Defaulr props for Clock component
+
+[33mcommit 56b4e3b207563480c8dfc2a8db50aa6b2f0a6317[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Tue Mar 2 23:48:47 2021 +0100
+
+    Language change
+
+[33mcommit 305cd7222c20c57d9694976f4077cb722ca2853f[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 28 23:58:36 2021 +0100
+
+    Error component created
+
+[33mcommit 097292d5d059c811f3f022c98dc122e341c98788[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 28 23:00:19 2021 +0100
+
+    Error with "'Pause" functionality solved
+
+[33mcommit d1c2d44d3a5fff0c921aba9b121daf8722dbf2bb[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sat Feb 27 00:05:20 2021 +0100
+
+    StrictMode added
+
+[33mcommit a29182b5efe9105ea07bc38a63a34192c18a3df5[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Feb 26 23:49:00 2021 +0100
+
+    Component lifecycle
+
+[33mcommit 88867c83aeb7f960d16642164d6ba7dac9034ba7[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Feb 25 23:20:43 2021 +0100
+
+    Console capabilities test
+
+[33mcommit a5d3aad73e9e6bd46f766d647238e861b1b689d0[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:57:21 2021 +0100
+
+    Fixed ProgressBar class error
+
+[33mcommit 5a8eb55b844cc03a5f5b07846fb774ab2c3f37da[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:52:38 2021 +0100
+
+    Progressbar bg-color change
+
+[33mcommit 509894c3e99b8e307073540747f2dcb69a83d698[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:51:24 2021 +0100
+
+    Correct folders and files structure
+
+[33mcommit 7f422cf12eb172ff35c2a7c458949c8030c77560[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:49:50 2021 +0100
+
+    Components.scss file with components syyles import
+
+[33mcommit 4cc3bbf69cae12f122000d0f74234616a95e563f[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:48:32 2021 +0100
+
+    CSS structure
+
+[33mcommit 7fa8e1e5570afdaf36fe3255693a41d5098b124b[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:37:46 2021 +0100
+
+    Extract Timebox and TimeboxList components
+
+[33mcommit bb76e014e3f7449eca01e615b6c1165ca4f745d1[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:34:03 2021 +0100
+
+    Extract TimeboxCreator component
+
+[33mcommit 86d8209d35233e09850c1f861a8d83b5afcc72df[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:29:14 2021 +0100
+
+    Extract EditableTimebox component
+
+[33mcommit 9b4f1a925a38321ee39705ebee6ef025c90012da[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 20:21:36 2021 +0100
+
+    Extract CurrentTimebox component
+
+[33mcommit 399c11c172a2299ec4c0a302704d341d1b5adbf3[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 19:17:49 2021 +0100
+
+    Extract TimeboxEditor component
+
+[33mcommit a19051390e34373a0a70cfb287a1191ec4bcee97[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 21 19:07:06 2021 +0100
+
+    Extract ProgressBar component
+
+[33mcommit cf7b6097f98edfef2d3a72e20866fa918ab8d9c4[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Feb 12 22:41:38 2021 +0100
+
+    Use classnames in progress bar
+
+[33mcommit 1aec669809a18dcda75dd3ace79b05b68a3b4f15[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Feb 12 22:30:01 2021 +0100
+
+    Modify progress barc with properties
+
+[33mcommit b3597db94583d94d76a01a8cd76c46aab650b512[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Fri Feb 12 00:55:38 2021 +0100
+
+    Use shorthand syntax to define BEM classes
+
+[33mcommit f9918c4bce236f9aca9d2484d3d839f79e7ad1eb[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Feb 11 01:41:26 2021 +0100
+
+    Modularize styles
+
+[33mcommit 99c28fcc97f23a20db525f2e2324d19c398beded[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Feb 11 01:34:56 2021 +0100
+
+    Use scss for styling
+
+[33mcommit 31a8f68e8fc7d2c6925829dc642138406a021c28[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Feb 11 01:19:02 2021 +0100
+
+    Extract main.css
+
+[33mcommit 8cad652d4038a3460a0a9ce0547c42e4de971a15[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Feb 11 01:16:29 2021 +0100
+
+    Extract remaining components
+
+[33mcommit 167dd9ea5e77c4a547c78d874704867276458d90[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Thu Feb 11 01:06:00 2021 +0100
+
+    Extract Clock component
+
+[33mcommit 86e7e71218bcbedc6f9392762583f8c8f5013b6c[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Wed Feb 10 01:54:31 2021 +0100
+
+    test-commit
+
+[33mcommit 9dac209684e069b66e28ea9f67db466ecc7dfa5e[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Wed Feb 10 01:51:09 2021 +0100
+
+    install uuid library
+
+[33mcommit 3eb59c449b6bd51ae4e5d14b2688587c7858da9f[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Tue Feb 9 00:39:36 2021 +0100
+
+    feat: create react app
+
+[33mcommit f4bda75ed326b5a133bd8c7f19301a7df6c9bd00[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 7 18:45:27 2021 +0100
+
+    feat: index file
+
+[33mcommit 652127acf6d83f5c3957b8b7ab0a20e5e22bbd4a[m
+Author: damiaNR10 <damianrog96@gmail.com>
+Date:   Sun Feb 7 18:44:06 2021 +0100
+
+    first commit

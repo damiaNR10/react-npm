@@ -2,16 +2,62 @@ import React from 'react';
 import Timebox from './Timebox';
 import TimeboxCreator from './TimeboxCreator';
 import ErrorBoundary from './ErrorBoundary';
+import { v4 as uuidv4 } from 'uuid';
+
+function wait(ms = 2000) {
+    return new Promise(
+        (resolve) => {
+            setTimeout(resolve, ms);
+        }
+    )
+}
+
+const timeboxes = [
+    {id: "aa", title: "Uczę się A", totalTimeInMinutes: "5"}, 
+    {id: "bb", title: "Uczę się B", totalTimeInMinutes: "10"},
+    {id: "cc", title: "Uczę się C", totalTimeInMinutes: "15"}
+];
+
+const TimeboxesAPI = {
+
+    //Object with KEY - VALUE pairs
+    getAllTimeboxes: async function() {
+        await wait(2000);
+        return [...timeboxes];
+    },  
+    addTimebox: async function(timeboxToAdd) {
+        await wait(2000);
+        const addedTimebox = {...timeboxToAdd, id: uuidv4()};
+        timeboxes.push(addedTimebox);
+        return addedTimebox;
+    },
+    replaceTimebox: async function(timeboxToReplace) {
+        if(!timeboxToReplace.id) {
+            return new Error('Cannot replace timebox without an id.');
+        }
+        const replacedTimebox = {...timeboxToReplace};
+    },
+}
 
 class TimeboxList extends React.Component {
 
     state = {
-        timeboxes: [
-            {id: "aa", title: "Uczę się A", totalTimeInMinutes: "5"}, 
-            {id: "bb", title: "Uczę się B", totalTimeInMinutes: "10"},
-            {id: "cc", title: "Uczę się C", totalTimeInMinutes: "15"}
-        ],
+        timeboxes: [],
+        loading: true,
+        error: false,
         // hasError: false,
+    }
+
+    //Timeboxes will be shown after time defined in wait() funciton:
+
+    componentDidMount() {
+        TimeboxesAPI.getAllTimeboxes().then(
+            (timeboxes) => {this.setState({timeboxes})}
+        ).catch(
+            (error) => this.setState({error})
+        ).finally(
+            () => this.setState({loading: false})
+        );
     }
 
     // static getDerivedStateFromError(error) {
@@ -25,10 +71,15 @@ class TimeboxList extends React.Component {
     // }
 
     addTimebox = (timebox) => {
-        this.setState(prevState => {
-            const timeboxes = [...prevState.timeboxes, timebox];
-            return {timeboxes};
-        })
+        TimeboxesAPI.addTimebox(timebox).then(
+            // .then(() => TimeboxesAPI.getAllTimeboxes())
+            // .then(
+            //     (timeboxes) => {this.setState({timeboxes})}
+            (addedTimebox) => this.setState(prevState => {
+                const timeboxes = [...prevState.timeboxes, addedTimebox];
+                return {timeboxes};
+            })
+        );
     }
 
     removeTimebox = (indexToRemove) => {
@@ -51,7 +102,7 @@ class TimeboxList extends React.Component {
         try {
             this.addTimebox(createdTimebox);
         } catch(error) {
-            console.log("An error occured in 'createTimebox' function", error);
+            console.log("An error occured in 'createTimebox' function.", error);
         }
     }
 
@@ -60,8 +111,9 @@ class TimeboxList extends React.Component {
             <>
             <TimeboxCreator onCreate = {this.handleCreate}/>
             <ErrorBoundary message = "Something went wrong :(">
+            {this.state.loading ? "Timeboxes loading..." :  null}
+            {this.state.error ? "Timeboxes loading went wrong :(" :  null}
             {  
-                // this.state.hasError ? "Smth went wrong" : 
                 this.state.timeboxes.map((timebox, index) => (
                     <Timebox 
                     key = {timebox.id} 
