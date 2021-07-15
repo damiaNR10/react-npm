@@ -114,7 +114,6 @@ class TimeboxList extends React.Component {
             {this.state.loading ? "Timeboxes loading..." :  null}
             {this.state.error ? "Timeboxes loading went wrong :(" :  null}
             {  
-                // this.state.hasError ? "Smth went wrong" : 
                 this.state.timeboxes.map((timebox, index) => (
                     <Timebox 
                     key = {timebox.id} 
