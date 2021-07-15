@@ -102,7 +102,7 @@ class TimeboxList extends React.Component {
         try {
             this.addTimebox(createdTimebox);
         } catch(error) {
-            console.log("An error occured in 'createTimebox' function", error);
+            console.log("An error occured in 'createTimebox' function.", error);
         }
     }
 
