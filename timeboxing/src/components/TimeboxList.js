@@ -18,6 +18,13 @@ const timeboxes = [
     {id: "cc", title: "Uczę się C", totalTimeInMinutes: "15"}
 ];
 
+function findIndexById(id) {
+    const result = timeboxes.findIndex((timebox) => timebox.id === id);
+    if(result < 0) {
+        throw new Error('Timebox with given id does not exist.');
+    }
+}
+
 const TimeboxesAPI = {
 
     //Object with KEY - VALUE pairs
@@ -35,7 +42,10 @@ const TimeboxesAPI = {
         if(!timeboxToReplace.id) {
             return new Error('Cannot replace timebox without an id.');
         }
+        const index = findIndexById(timeboxToReplace.id); 
         const replacedTimebox = {...timeboxToReplace};
+        timeboxes[index] = replacedTimebox;
+        return replacedTimebox;
     },
 }
 
