@@ -2,53 +2,7 @@ import React from 'react';
 import Timebox from './Timebox';
 import TimeboxCreator from './TimeboxCreator';
 import ErrorBoundary from './ErrorBoundary';
-import { v4 as uuidv4 } from 'uuid';
-
-function wait(ms = 2000) {
-    return new Promise(
-        (resolve) => {
-            setTimeout(resolve, ms);
-        }
-    )
-}
-
-const timeboxes = [
-    {id: "aa", title: "Uczę się A", totalTimeInMinutes: "5"}, 
-    {id: "bb", title: "Uczę się B", totalTimeInMinutes: "10"},
-    {id: "cc", title: "Uczę się C", totalTimeInMinutes: "15"}
-];
-
-function findIndexById(id) {
-    const result = timeboxes.findIndex((timebox) => timebox.id === id);
-    if(result < 0) {
-        throw new Error('Timebox with given id does not exist.');
-    }
-}
-
-const TimeboxesAPI = {
-
-    //Object with KEY - VALUE pairs
-    getAllTimeboxes: async function() {
-        await wait(2000);
-        return [...timeboxes];
-    },  
-    addTimebox: async function(timeboxToAdd) {
-        await wait(2000);
-        const addedTimebox = {...timeboxToAdd, id: uuidv4()};
-        timeboxes.push(addedTimebox);
-        return addedTimebox;
-    },
-    replaceTimebox: async function(timeboxToReplace) {
-        if(!timeboxToReplace.id) {
-            return new Error('Cannot replace timebox without an id.');
-        }
-        const index = findIndexById(timeboxToReplace.id); 
-        const replacedTimebox = {...timeboxToReplace};
-        timeboxes[index] = replacedTimebox;
-        return replacedTimebox;
-    },
-}
-
+import TimeboxesAPI from '../api/FakeTimeboxesApi';
 class TimeboxList extends React.Component {
 
     state = {
@@ -93,19 +47,29 @@ class TimeboxList extends React.Component {
     }
 
     removeTimebox = (indexToRemove) => {
-        this.setState(prevState => {
-            const timeboxes = prevState.timeboxes.filter((timebox, index) => index !== indexToRemove);
-            return {timeboxes};
-        })        
+        TimeboxesAPI.removeTimebox(this.state.timeboxes[indexToRemove])
+        .then(
+            () => this.setState(prevState => {
+                const timeboxes = prevState.timeboxes.filter((timebox, index) => index !== indexToRemove);
+                return {timeboxes};
+            }) 
+        );
+        // this.setState(prevState => {
+        //     const timeboxes = prevState.timeboxes.filter((timebox, index) => index !== indexToRemove);
+        //     return {timeboxes};
+        // })        
     }
 
-    updateTimebox = (indexToUpdate, updatedTimebox) => {
-        this.setState(prevState => {
-            const timeboxes = prevState.timeboxes.map((timebox, index) => 
-                index === indexToUpdate ? updatedTimebox : timebox
-            );
-            return {timeboxes};
-        });  
+    updateTimebox = (indexToUpdate, timeboxToUpdate) => {
+        TimeboxesAPI.replaceTimebox(timeboxToUpdate)
+        .then(
+            (updatedTimebox) => this.setState(prevState => {
+                const timeboxes = prevState.timeboxes.map((timebox, index) => 
+                    index === indexToUpdate ? updatedTimebox : timebox
+                );
+                return {timeboxes};
+            })  
+        );
     }
 
     handleCreate = (createdTimebox) => {
